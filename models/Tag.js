@@ -7,28 +7,14 @@ class Tag extends Model {}
 Tag.init(
   {
     // define columns
-    book_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true
     },
-    title: {
+    tag_name: {
       type: DataTypes.STRING
-    },
-    author: {
-      type: DataTypes.STRING
-    },
-    isbn: {
-      type: DataTypes.STRING
-    },
-    pages: {
-      type: DataTypes.INTEGER
-    },
-    edition: {
-      type: DataTypes.INTEGER
-    },
-    is_paperback: {
-      type: DataTypes.BOOLEAN
     }
   },
   {

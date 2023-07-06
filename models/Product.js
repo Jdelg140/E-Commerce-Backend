@@ -10,29 +10,36 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
-    book_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull:false,
       autoIncrement: true
     },
-    title: {
-      type: DataTypes.STRING
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull:false,
+
     },
-    author: {
-      type: DataTypes.STRING
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull:false,
+      isDecimal:true
     },
-    isbn: {
-      type: DataTypes.STRING
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      defaultValue: 10,
+      isNumeric:true
     },
-    pages: {
-      type: DataTypes.INTEGER
+    category_id: { 
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      },
     },
-    edition: {
-      type: DataTypes.INTEGER
-    },
-    is_paperback: {
-      type: DataTypes.BOOLEAN
-    }
+   
   },
   {
     sequelize,

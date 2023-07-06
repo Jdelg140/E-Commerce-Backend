@@ -7,28 +7,15 @@ class Category extends Model {}
 Category.init(
   {
     // define columns
-    book_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull:false,
       autoIncrement: true
     },
-    title: {
-      type: DataTypes.STRING
-    },
-    author: {
-      type: DataTypes.STRING
-    },
-    isbn: {
-      type: DataTypes.STRING
-    },
-    pages: {
-      type: DataTypes.INTEGER
-    },
-    edition: {
-      type: DataTypes.INTEGER
-    },
-    is_paperback: {
-      type: DataTypes.BOOLEAN
+    category_name: {
+      type: DataTypes.STRING,
+      allowNull:false
     }
   },
   {
