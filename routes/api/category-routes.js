@@ -15,8 +15,6 @@ router.get('/', async (req, res) => {
     console.error(err)
     res.status(500).json(err)
   }
- 
-  
 });
 
 router.get('/:id', async (req, res) => {

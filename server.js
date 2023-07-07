@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-sequelize.sync({ force: true }) 
+sequelize.sync({ force: false }) 
   .then(() => {
     // Start the server
     app.listen(PORT, () => {
